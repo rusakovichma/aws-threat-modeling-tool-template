@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <KnowledgeBase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Manifest name="AWS Microsoft Threat Modeling Template" id="cc62ebae-3748-431e-b1df-f4220dc9003f" version="1.0.0.20" author="rusakovichma@gmail.com" />
+  <Manifest name="AWS Microsoft Threat Modeling Template" id="cc62ebae-3748-431e-b1df-f4220dc9003f" version="1.0.0.21" author="rusakovichma@gmail.com" />
   <ThreatMetaData>
     <IsPriorityUsed>true</IsPriorityUsed>
     <IsStatusUsed>true</IsStatusUsed>
@@ -737,7 +737,21 @@
       <Representation>Ellipse</Representation>
       <StrokeThickness>0</StrokeThickness>
       <ImageLocation>Centered on stencil</ImageLocation>
-      <Attributes />
+      <Attributes>
+        <Attribute>
+          <Id>94538d37-d82c-4154-994c-9eca33121f91</Id>
+          <IsInherited>false</IsInherited>
+          <Name>438a21bf-8d08-468c-acf9-c6358f7291fd</Name>
+          <DisplayName>Identity Source used</DisplayName>
+          <Mode>Dynamic</Mode>
+          <Type>List</Type>
+          <Inheritance>Virtual</Inheritance>
+          <AttributeValues>
+            <Value>Cognito User Pool Directory</Value>
+            <Value>External Idintity Federation</Value>
+          </AttributeValues>
+        </Attribute>
+      </Attributes>
       <StencilConstraints>
         <StencilConstraint>
           <SelectedStencilType>Any</SelectedStencilType>
@@ -3053,6 +3067,70 @@
           <HideFromUI>false</HideFromUI>
           <Values>
             <Value>1. Enable Adaptive Authentication feature and include what actions to take at different risk levels and customization of notification messages to users</Value>
+          </Values>
+          <Id>f13bc45d-5afb-4868-a401-8b7811b55258</Id>
+          <AttributeType>0</AttributeType>
+        </ThreatMetaDatum>
+      </PropertiesMetaData>
+    </ThreatType>
+    <ThreatType>
+      <GenerationFilters>
+        <Include>(target is '4193f858-d842-47bf-92fd-4fd2522e012c' and target.438a21bf-8d08-468c-acf9-c6358f7291fd is 'Cognito User Pool Directory') or (source is '4193f858-d842-47bf-92fd-4fd2522e012c' and source.438a21bf-8d08-468c-acf9-c6358f7291fd is 'Cognito User Pool Directory')</Include>
+        <Exclude>flow.d6dff389-d4c9-4514-8ebe-aee86b5df8b0 is 'No' </Exclude>
+      </GenerationFilters>
+      <Id>e7e394e9-79fc-4cb4-b79d-52b79f3d7890</Id>
+      <ShortTitle>Cognito Identity Federation Source</ShortTitle>
+      <Category>9d855111-5acc-499b-a1d8-5c3518395d6d</Category>
+      <RelatedCategory />
+      <Description>Usage of external Company SSO for Users Identity Federations help to mitigate possible security issues related with unproper Users management or access policy violations</Description>
+      <PropertiesMetaData>
+        <ThreatMetaDatum>
+          <Name>UserThreatShortDescription</Name>
+          <Label>Short Description</Label>
+          <HideFromUI>true</HideFromUI>
+          <Values>
+            <Value xsi:nil="true" />
+          </Values>
+          <Id>5d3b996b-aed5-4d95-8cf6-617bb67bf042</Id>
+          <AttributeType>1</AttributeType>
+        </ThreatMetaDatum>
+        <ThreatMetaDatum>
+          <Name>UserThreatDescription</Name>
+          <Label>Description</Label>
+          <HideFromUI>false</HideFromUI>
+          <Values>
+            <Value>Usage of external Company SSO for Users Identity Federations help to mitigate possible security issues related with unproper Users management or access policy violations</Value>
+          </Values>
+          <Id>cf377f97-9dea-42d6-ae63-b097c4a8ec4d</Id>
+          <AttributeType>0</AttributeType>
+        </ThreatMetaDatum>
+        <ThreatMetaDatum>
+          <Name>StateInformation</Name>
+          <Label>Justification</Label>
+          <HideFromUI>false</HideFromUI>
+          <Values>
+            <Value>Security Requirement</Value>
+          </Values>
+          <Id>0406a684-e06e-4643-ba21-0f63104d9131</Id>
+          <AttributeType>0</AttributeType>
+        </ThreatMetaDatum>
+        <ThreatMetaDatum>
+          <Name>Priority</Name>
+          <Label>Priority</Label>
+          <HideFromUI>false</HideFromUI>
+          <Values>
+            <Value>High</Value>
+          </Values>
+          <Description>Priority</Description>
+          <Id>bc9c6e2a-15d0-4863-9cac-589e51e4ca1e</Id>
+          <AttributeType>1</AttributeType>
+        </ThreatMetaDatum>
+        <ThreatMetaDatum>
+          <Name>f13bc45d-5afb-4868-a401-8b7811b55258</Name>
+          <Label>Action Items</Label>
+          <HideFromUI>false</HideFromUI>
+          <Values>
+            <Value>1. Consider usage of Corporate SSO instead of Cognito User pool directory for users identity and access management</Value>
           </Values>
           <Id>f13bc45d-5afb-4868-a401-8b7811b55258</Id>
           <AttributeType>0</AttributeType>
